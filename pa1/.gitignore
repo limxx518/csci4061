@@ -1,0 +1,11 @@
+*.pdf
+~.*
+*.o
+*.out
+*.exe
+mymake
+vgcore.*
+myprog
+myproject
+mygame
+.vscode/
