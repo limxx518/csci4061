@@ -1,0 +1,21 @@
+mygame: main.o player.o enemy.o renderer.o vecmath.o image.o mesh.o
+	cc -o mygame main.o player.o enemy.o renderer.o vecmath.o image.o mesh.o -lGL -lglut -lpng -lz -lm
+	ls -l
+
+main.o: main.c
+	cc -c main.c
+
+player.o: player.c
+	cc -c player.c
+	rm -rf third.c
+
+renderer.o: test/renderer.c test.o
+	gcc -c test/renderer.c
+	/bin/pwd 
+
+mesh.o: 
+	cc -c mesh.c
+
+test.o:
+	/usr/bin/du -h
+	/bin/ls -l
