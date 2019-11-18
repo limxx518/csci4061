@@ -1,0 +1,7 @@
+mapreduce
+*.o
+*.out
+*.exe
+src/MapperInput/
+vgcore*
+*vscode/
