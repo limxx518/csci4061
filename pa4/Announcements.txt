@@ -1,0 +1,44 @@
+ANNOUNCEMENT 1: https://canvas.umn.edu/courses/135130/discussion_topics/519052
+ 1. Please use integer arrays when exchanging messages between server 
+    and client. Do not encode or decode the integer arrays to chars 
+    or other data types. For all types of requests, the request is 
+    always an integer array of size 28 (REQUEST_MSG_SIZE).  For 
+    responses, GET_AZLIST uses an integer array of size 28 
+    (LONG_RESPONSE_MSG_SIZE), and the other requests use an integer 
+    array of size 3 (RESPONSE_MSG_SIZE). For example, let’s say you 
+    have request[REQUEST_MSG_SIZE] and  response[LONG_RESPONSE_MSG_SIZE].  
+    You can simply call the following functions for sending the request, 
+    and receiving the response.
+
+    write(socket_file_descriptor, request, sizeof(int) * REQUEST_MSG_SIZE)
+    read(socket_file_descriptor, response, sizeof(int) * LONG_RESPONSE_MSG_SIZE)
+
+ 2. PA4_client.zip and PA4_server.zip have been updated. You can download 
+    again or modify the following changes by yourself.
+
+ • [Line46 of client.c] createLogFile(MapperID) -> createLogFile()
+ • [protocol.h for both client and server] LONG_RESPONSE_MSG_SIZE 29 -> 28
+
+ 3. Please find the attached Q&A that students asked about PA4 for 
+    clarifications. I will share further Q&A next week.
+-----------------------------------------------------------------------------
+ANNOUNCEMENT 2: https://canvas.umn.edu/courses/135130/discussion_topics/524083
+
+There are a few other announcements and Q&A2 has been attached here. 
+
+ 1. If you have compile error, please add the following two lines at the 
+    top of the source codes.
+
+     #define _BSD_SOURCE
+     #define _DEFAULT_SOURCE
+
+ 2. The data of the response in the case of RSP_NOK has not been clearly 
+    stated in the writeup, so you can fill the response data either with zeros 
+    or the data which is supposed to be returned in the case of RSP_OK. We 
+    will check only the response code, won't check the data in the case of 
+    RSP_NOK.
+
+ 3. There is a typo in Expected Output: GET_AZLIST of the PA4_Appendix.
+
+[Mapper ID] GET_AZLIST 0 0 <26 numbers> should be: 
+[Mapper ID] GET_AZLIST 0 <26 numbers>
