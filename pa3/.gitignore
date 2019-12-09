@@ -1,0 +1,9 @@
+*.o
+*.out
+*.exe
+wcs
+vgcore*
+*vscode/
+log.txt
+result.txt
+main
