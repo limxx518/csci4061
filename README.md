@@ -7,4 +7,4 @@ Major topics covered in this course include:
 * Threads and Synchronization (Use of pthread_create(), pthread_join(), mutex locks, semaphores)
 * Socket Programming  
   
-Code for pa1-pa3 have been graded and achieve perfect scores.
+Code for pa1-pa4 have been graded and achieve perfect scores.
